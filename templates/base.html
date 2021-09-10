@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>{% block title %}Game of Life{% endblock %}</title>
+        <meta charset="utf-8">
+    </head>
+
+    <body>
+        {% block content %}
+            <div class="content">
+                {% block app_content %}
+                {% endblock %}
+            </div>
+        {% endblock %}
+        {% block scripts %}
+            <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet" type="text/css">
+        {% endblock %}
+    </body>
+</html>
