@@ -1,5 +1,5 @@
 from flask import Flask
-from flask import render_template
+from flask import render_template, request
 
 from game_of_life import GameOfLife
 
@@ -7,10 +7,19 @@ from game_of_life import GameOfLife
 app = Flask(__name__)
 
 
-@app.route('/')
+width, height = 20, 15
+
+
+@app.route('/', methods=['get', 'post'])
 def index():
-    GameOfLife(width=15, height=10)
-    return render_template('index.html')
+    global width, height
+    if request.method == 'POST':
+        w_str = request.form.get('width')
+        width = int(w_str) if w_str else width
+        h_str = request.form.get('height')
+        height = int(h_str) if h_str else height
+    GameOfLife(width=width, height=height)
+    return render_template('index.html', width=width, height=height)
 
 
 @app.route('/live')

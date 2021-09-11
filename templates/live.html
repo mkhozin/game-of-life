@@ -1,10 +1,10 @@
 {% extends 'base.html' %}
 
 {% block app_content %}
-    <a class="btn btn-warning home" href="{{ url_for('index') }}">Начать заново</a>
-    <a class="btn btn-info refresh" href="{{ url_for('live') }}">Следующее поколение</a>
-
+    <a class="btn btn-warning home" href="{{ url_for('index') }}">На Главную</a>
     <div class="counter">{{ life.generation }}</div>
+    <a class="btn btn-info refresh" href="{{ url_for('live') }}">Обновить</a>
+
     <table class="world">
         {% for i in range(life.world|length) %}
             <tr>

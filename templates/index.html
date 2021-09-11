@@ -1,5 +1,18 @@
 {% extends 'base.html' %}
 
 {% block app_content %}
-    <a class="btn btn-primary" href="{{ url_for('live') }}">Создать жизнь</a>
+    <form action="" method="post">
+        <p>
+            <label for="width">Width:</label>
+            <input type="number" name="width" min="5" max="30" placeholder="{{ width }}">
+        </p>
+        <p>
+            <label for="height">Height:</label>
+            <input type="number" name="height" min="5" max="20" placeholder="{{ height }}">
+        </p>
+        <p>
+            <input type="submit">
+        </p>
+    </form>
+    <a class="btn btn-primary" href="{{ url_for('live') }}">Запустить игру</a>
 {% endblock %}

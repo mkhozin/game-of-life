@@ -46,7 +46,7 @@ a, table {
 }
 
 .counter {
-    margin: 20px 3px 3px;
+    margin: 6px 3px 3px;
     padding: 5px;
     font-family: "Book Antiqua", "Arial";
     background: aliceblue;
@@ -187,7 +187,7 @@ a, table {
     border-color: #d58512
 }
 
-.btn-warning.active.focus,.btn-warning.active:focus,.btn-warning.active:hover,.btn-warning:active.focus,.btn-warning:active:focus,.btn-warning:active:hover,.open>.dropdown-toggle.btn-warning.focus,.open>.dropdown-toggle.btn-warning:focus,.open>.dropdown-toggle.btn-warning:hover {
+.btn-active.focus,.btn-warning.active:focus,.btn-warning.active:hover,.btn-warning:active.focus,.btn-warning:active:focus,.btn-warning:active:hover,.open>.dropdown-toggle.btn-warning.focus,.open>.dropdown-toggle.btn-warning:focus,.open>.dropdown-toggle.btn-warning:hover {
     color: #fff;
     background-color: #d58512;
     border-color: #985f0d
