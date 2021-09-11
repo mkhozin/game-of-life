@@ -1,12 +1,13 @@
 from flask import Flask
 from flask import render_template, request
 
+from config import Config
 from forms import UniverseSize
 from game_of_life import GameOfLife
 
 
 app = Flask(__name__)
-app.secret_key = 'you_need_a_secret_key'
+app.config.from_object(Config)
 
 
 width, height = 20, 15
