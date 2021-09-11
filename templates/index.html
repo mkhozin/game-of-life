@@ -2,16 +2,24 @@
 
 {% block app_content %}
     <form action="" method="post">
+        {{ size.csrf_token() }}
+
         <p>
-            <label for="width">Width:</label>
-            <input type="number" name="width" min="5" max="30" placeholder="{{ width }}">
+            {{ size.width.label() }}
+            {{ size.width(placeholder=width) }}
+            {% for error in size.width.errors %}
+                {{ error }}
+            {% endfor %}
         </p>
         <p>
-            <label for="height">Height:</label>
-            <input type="number" name="height" min="5" max="20" placeholder="{{ height }}">
+            {{ size.height.label() }}
+            {{ size.height(placeholder=height) }}
+            {% for error in size.height.errors %}
+                {{ error }}
+            {% endfor %}
         </p>
         <p>
-            <input type="submit">
+            {{ size.submit }}
         </p>
     </form>
     <a class="btn btn-primary" href="{{ url_for('live') }}">Запустить игру</a>
